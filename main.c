@@ -15,9 +15,7 @@ typedef struct {
   int* (*method) (int);
 } arrayGenerationMethod;
 
-int main(int argc, char *argv[]) {
-  int reps = 3;
-  int n = 500;
+void runExperiment(int n, int reps) {
   sortMethod *sMethod = NULL;
   sortMethod sMethods[] = {
     {.name="quicksort", .method=quicksort},
@@ -33,7 +31,6 @@ int main(int argc, char *argv[]) {
   };
   int generationsSize = 4;
 
-  printHeader(reps);
   for (int i = 0; i < sortsSize; i++) {
     sMethod = &sMethods[i];
     for (int j = 0; j < generationsSize; j++) {
@@ -42,6 +39,13 @@ int main(int argc, char *argv[]) {
           n, reps);
     }
   }
+}
 
+int main(int argc, char *argv[]) {
+  int reps = 3;
+  int n = 500;
+
+  printHeader(reps);
+  runExperiment(n, reps);
   return 0;
 }
