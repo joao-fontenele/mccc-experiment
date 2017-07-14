@@ -41,6 +41,16 @@ void runExperiment(int n, int reps) {
   }
 }
 
+void testSort(void (*sort) (int*, int), int* (*getArray) (int), int n) {
+  int *array = getArray(n);
+
+  printArray(array, n);
+  sort(array, n);
+  printArray(array, n);
+
+  freeArray(array);
+}
+
 int main(int argc, char *argv[]) {
   int reps = 3;
   int n = 500;
