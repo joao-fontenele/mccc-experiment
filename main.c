@@ -53,13 +53,21 @@ void testSort(void (*sort) (int*, int), int* (*getArray) (int), int n) {
 }
 
 int main(int argc, char *argv[]) {
-  int reps = 3;
-  int n = 500;
-
+  // uncomment to check if the sort methods are working
   // testSort(bubblesort, getRandomArray, 5);
   // testSort(quicksort, getRandomArray, 5);
 
+  if (argc < 3) {
+    printf("give me the array size, and number of repetitions to take the average\n");
+    printf("ex:\n\t$ ./main <arraySize> <repetitions>\n\t$ ./main 500 5\n");
+    return 1;
+  }
+
+  int n = atoi(argv[1]);
+  int reps = atoi(argv[2]);
+
   printHeader(reps);
   runExperiment(n, reps);
+
   return 0;
 }
