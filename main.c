@@ -19,8 +19,9 @@ void runExperiment(int n, int reps) {
   sortMethod *sMethod = NULL;
   sortMethod sMethods[] = {
     {.name="quicksort", .method=quicksort},
+    {.name="bubblesort", .method= bubblesort},
   };
-  int sortsSize = 1;
+  int sortsSize = 2;
 
   arrayGenerationMethod *gMethod = NULL;
   arrayGenerationMethod gMethods[] = {
@@ -54,6 +55,9 @@ void testSort(void (*sort) (int*, int), int* (*getArray) (int), int n) {
 int main(int argc, char *argv[]) {
   int reps = 3;
   int n = 500;
+
+  // testSort(bubblesort, getRandomArray, 5);
+  // testSort(quicksort, getRandomArray, 5);
 
   printHeader(reps);
   runExperiment(n, reps);
