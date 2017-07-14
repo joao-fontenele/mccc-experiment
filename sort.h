@@ -11,4 +11,6 @@ int partition(int *array, int lo, int hi);
 void _quicksort(int *array, int lo, int hi);
 void quicksort(int *array, int n);
 
+void bubblesort(int *array, int n);
+
 #endif

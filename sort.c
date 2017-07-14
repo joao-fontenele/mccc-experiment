@@ -36,3 +36,19 @@ void _quicksort(int *array, int lo, int hi) {
 void quicksort(int *array, int n) {
   _quicksort(array, 0, n - 1);
 }
+
+void bubblesort(int *array, int n) {
+    int top = n;
+    int newTop = 0;
+
+    while (top > 0) {
+      newTop = 0;
+      for (int i = 1; i < n; i++) {
+          if (array[i - 1] > array[i]) {
+              swap(&array[i - 1], &array[i]);
+              newTop = i;
+          }
+      }
+      top = newTop;
+    }
+}
