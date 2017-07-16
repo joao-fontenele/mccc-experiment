@@ -19,9 +19,9 @@ void printHeader(int reps) {
   printf(",n"); // prints header for the array size
 
   // prints the numer of the repetition, column headers
-  for (int i = 0; i < reps; i++) {
-    printf(",%d", i);
-  }
+  // for (int i = 0; i < reps; i++) {
+  //   printf(",%d", i);
+  // }
 
   // prints the average header
   printf(",avg\n");
@@ -45,7 +45,7 @@ void printLine(
   for (int i = 0; i < reps; i++) {
     array = getArray(n);
     thisTime = timeSortFunction(sort, array, n);
-    printf(",%lf", thisTime); // prints the time of this rep
+    // printf(",%lf", thisTime); // prints the time of this rep
     totalTime += thisTime;
     freeArray(array);
   }
