@@ -19,9 +19,10 @@ void runExperiment(int n, int reps) {
   sortMethod *sMethod = NULL;
   sortMethod sMethods[] = {
     {.name="quicksort", .method=quicksort},
+    {.name="quicksortRandom", .method=quicksortRandom},
     {.name="bubblesort", .method= bubblesort},
   };
-  int sortsSize = 2;
+  int sortsSize = 3;
 
   arrayGenerationMethod *gMethod = NULL;
   arrayGenerationMethod gMethods[] = {
@@ -56,6 +57,7 @@ int main(int argc, char *argv[]) {
   // uncomment to check if the sort methods are working
   // testSort(bubblesort, getRandomArray, 5);
   // testSort(quicksort, getRandomArray, 5);
+  // testSort(quicksortRandom, getRandomArray, 5);
 
   if (argc < 3) {
     printf("give me the array size, and number of repetitions to take the average\n");
