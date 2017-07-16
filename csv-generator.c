@@ -35,7 +35,7 @@ void printLine(
     int n, // size of the array to be generated and sorted
     int reps // amount of repetitions to time the sorting of the generated array
   ) {
-  int *array = getArray(n);
+  int *array = NULL;
   double totalTime = 0.0;
   double thisTime = 0.0;
 
@@ -43,13 +43,13 @@ void printLine(
   printf("%s,%s,%d", sortName, arrayType, n);
 
   for (int i = 0; i < reps; i++) {
+    array = getArray(n);
     thisTime = timeSortFunction(sort, array, n);
     printf(",%lf", thisTime); // prints the time of this rep
     totalTime += thisTime;
+    freeArray(array);
   }
 
   // prints the average time of all reps
   printf(",%lf\n", totalTime / reps); // prints the time of this rep
-
-  freeArray(array);
 }
