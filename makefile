@@ -1,7 +1,7 @@
 COMPILER=gcc
 EXECUTABLE=main
 FLAGS=-Wall -g
-LIBRARIES=
+LIBRARIES=-lm
 SOURCES=$(wildcard *.c)
 HEADERS=$(wildcard *.h)
 OBJECTS=$(SOURCES:.c=.o)
