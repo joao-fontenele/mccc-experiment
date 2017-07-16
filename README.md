@@ -11,6 +11,7 @@ repetitions.
 
 Sorting methods:
 - quicksort
+- random pivot quicksort
 - bubblesort
 
 Array types:
@@ -29,24 +30,28 @@ make
 
 Positional command line arguments are:
 
-- array size: size of the array generated for each of the sorting methods.
 - repetitions: amount of times each method is run, to take the average.
+- array sizes: a variable amount of array sizes
 
 ```
-./main <array size> <repetitions>
-./main 500 5
+./main <repetitions> <...array sizes>
+./main 30 500
 ```
 
 One possible output for the command above would be:
 
 ```csv
-sort,type,n,0,1,2,avg
-quicksort,random,500,0.000180,0.001388,0.000998,0.000855
-quicksort,ordered,500,0.000600,0.000603,0.000605,0.000603
-quicksort,reversed,500,0.000976,0.000600,0.000582,0.000719
-quicksort,repeated,500,0.000540,0.000545,0.000542,0.000542
-bubblesort,random,500,0.001516,0.000002,0.000002,0.000507
-bubblesort,ordered,500,0.000002,0.000002,0.000002,0.000002
-bubblesort,reversed,500,0.001865,0.000002,0.000002,0.000623
-bubblesort,repeated,500,0.000002,0.000003,0.000002,0.000002
+sort,type,n,avg
+quicksort,random,500,0.000059
+quicksort,ordered,500,0.000597
+quicksort,reversed,500,0.000963
+quicksort,repeated,500,0.000563
+quicksortRandom,random,500,0.000667
+quicksortRandom,ordered,500,0.000586
+quicksortRandom,reversed,500,0.000725
+quicksortRandom,repeated,500,0.001428
+bubblesort,random,500,0.001558
+bubblesort,ordered,500,0.000002
+bubblesort,reversed,500,0.001851
+bubblesort,repeated,500,0.000002
 ```

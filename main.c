@@ -60,16 +60,19 @@ int main(int argc, char *argv[]) {
   // testSort(quicksortRandom, getRandomArray, 5);
 
   if (argc < 3) {
-    printf("give me the array size, and number of repetitions to take the average\n");
-    printf("ex:\n\t$ ./main <arraySize> <repetitions>\n\t$ ./main 500 5\n");
+    printf("give me the number of repetitions to take the average, and the sizes of the arrays\n");
+    printf("ex:\n\t$ ./main <repetitions> <...N>\n\t$ ./main 30 50 100 200\n");
     return 1;
   }
 
-  int n = atoi(argv[1]);
-  int reps = atoi(argv[2]);
+  int n = 0;
+  int reps = atoi(argv[1]);
 
   printHeader(reps);
-  runExperiment(n, reps);
+  for (int i = 2; i < argc; i++) {
+    n = atoi(argv[i]);
+    runExperiment(n, reps);
+  }
 
   return 0;
 }
